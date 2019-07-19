@@ -12,7 +12,7 @@ export class CarComponent implements OnInit {
   model:string;
   colors:Colors;
   options:string[];
-  test:any;
+  //test:any;
 
   constructor() { }
 
@@ -26,9 +26,42 @@ export class CarComponent implements OnInit {
       wheels: 'Silver' 
     };
     this.options = ['ABS', 'Автопилот', 'Парктроник'];
-    this.test = true; //любой тип данных
+   // this.test = true; //любой тип данных
   }
 
+  carSelect(carName) {
+    if(carName == 'bmw'){ 
+            this.name = 'BMW';
+            this.speed = 280;
+            this.model = 'M5';
+            this.colors = {
+              car: 'Blue',
+              salon: 'White',
+              wheels: 'Black' 
+            };
+            this.options = ['ABS', 'Автопилот', 'Парктроник'];
+          } else if(carName == 'audi') {
+            this.name = 'Audi';
+            this.speed = 235;
+            this.model = 'RS8';
+            this.colors = {
+              car: 'White',
+              salon: 'Black',
+              wheels: 'Silver' 
+            };
+            this.options = ['Система трека', 'Круиз контроль', 'Высоки клиренс'];
+          } else {
+              this.name = 'Mercedec';
+              this.speed = 225;
+              this.model = 'C180';
+              this.colors = {
+                car: 'White',
+                salon: 'Black',  
+                wheels: 'Silver' 
+              };
+              this.options = ['Телевизоры на сидеьях', 'Массаж', 'Парктроник'];
+            }
+          }
 }
 
 interface Colors {
