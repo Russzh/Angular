@@ -1,1 +1,1 @@
-![Иллюстрация к проекту](https://github.com/russ.zh/angular/raw/master/AutoCenter.png)
+![Иллюстрация к проекту](https://github.com/Russzh/Angular/blob/master/AutoCenter.png)
