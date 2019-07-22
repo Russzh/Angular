@@ -29,6 +29,20 @@ export class CarComponent implements OnInit {
    // this.test = true; //любой тип данных
   }
 
+  addOpt(option) {
+    this.options.unshift(option);
+    return false;
+  }
+
+  deleteOpt(option){
+    for(let i = 0; i < this.options.length; i++){
+      if(this.options[i] == option) {
+        this.options.splice(i, 1);
+        break; 
+      }
+    }
+  }
+
   carSelect(carName) {
     if(carName == 'bmw'){ 
             this.name = 'BMW';
