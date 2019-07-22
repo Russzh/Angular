@@ -13,6 +13,8 @@ export class CarComponent implements OnInit {
   colors:Colors;
   options:string[];
   //test:any;
+  isEdit:boolean = false;
+
 
   constructor() { }
 
@@ -27,6 +29,10 @@ export class CarComponent implements OnInit {
     };
     this.options = ['ABS', 'Автопилот', 'Парктроник'];
    // this.test = true; //любой тип данных
+  }
+
+  showEdit() {
+    this.isEdit = !this.isEdit;
   }
 
   addOpt(option) {
