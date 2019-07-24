@@ -1,18 +1,23 @@
 import { Component } from '@angular/core';
+import { CardsSevice } from './cards.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [CardsSevice]
 })
 export class AppComponent {
 
-  cards = [
-    {name: 'WFM 1'},
-    {name: 'WFM 2'},
-    {name: 'WFM 3'},
-    {name: 'WFM 4'},
-    {name: 'WFM 5'}
-  ] 
+  cards = [ ];
+
+  constructor(private cardsService:CardsSevice ) { }
+
+  ngOnInit() {
+    this.cardsService.getCards().subscribe(cards => {
+      this.cards = cards 
+    });
+    // this.cards = this.cardsService.cards
+  }
 
 }
