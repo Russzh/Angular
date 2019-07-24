@@ -8,5 +8,10 @@ import { Component, Input } from '@angular/core';
 export class CardsComponent {
 
   @Input() card;
+  isMarked = false;
+
+  onClick() {
+    this.isMarked = true;
+  }
 
 }

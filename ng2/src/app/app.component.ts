@@ -10,6 +10,7 @@ import { CardsSevice } from './cards.service';
 export class AppComponent {
 
   cards = [ ];
+  searchStr = '';
 
   constructor(private cardsService:CardsSevice ) { }
 
