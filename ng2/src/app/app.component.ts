@@ -9,16 +9,4 @@ import { CardsSevice } from './cards.service';
 })
 export class AppComponent {
 
-  cards = [ ];
-  searchStr = '';
-
-  constructor(private cardsService:CardsSevice ) { }
-
-  ngOnInit() {
-    this.cardsService.getCards().subscribe(cards => {
-      this.cards = cards 
-    });
-    // this.cards = this.cardsService.cards
-  }
-
 }

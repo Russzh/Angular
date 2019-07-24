@@ -9,3 +9,8 @@
     transition: .5s all;
     z-index: 1000;
 }
+
+.card-content {
+    height: 120px;
+    width: 280px;
+}
