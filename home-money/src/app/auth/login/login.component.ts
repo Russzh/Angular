@@ -3,6 +3,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UsersService } from 'src/app/shared/services/user.service';
 import { User } from 'src/app/shared/models/user.model';
 import { Message } from 'src/app/shared/message.model';
+import { AuthService } from 'src/app/shared/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +16,10 @@ export class LoginComponent implements OnInit {
   form: FormGroup;
   message: Message;
 
-  constructor( private usersService:UsersService) { }
+  constructor( private usersService:UsersService,
+                private authService: AuthService,
+                private router:Router
+                ) { }
 
   ngOnInit() {
     this.message = new Message('danger', '');
@@ -37,8 +42,11 @@ export class LoginComponent implements OnInit {
     this.usersService.getUserByEmail(formData.email)
        .subscribe((user:User) => {
         if (user) {
-          if (user.password === formData.password){
-            //logic
+          if (user.password === formData.password) {
+            this.message.text = '';
+            window.localStorage.setItem('user', JSON.stringify(user));
+            this.authService.login();
+            // this.router.navigate(['']);
           } else {
             this.showMessage('Пароль не верный');
           }
