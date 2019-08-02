@@ -38,8 +38,10 @@ export class BillPageComponent implements OnInit{
       })
   }
 
-  // ngOnDestroy() {
-  //   this.subscription.unsubscribe();
-  // }
+  ngOnDestroy() {
+    if (this.subscription){
+     this.subscription.unsubscribe();
+    }
+  }
 
 }
