@@ -12,7 +12,7 @@ export class BillService {
         }
 
         getCurrency() {
-            return this.http.get('http://data.fixer.io/api/latest?access_key=2ed306bccf50a70459e7e6087ba1d9b7&format=1')
+            return this.http.get('http://data.fixer.io/api/latest?access_key=2ed306bccf50a70459e7e6087ba1d9b7&format=1');
         }
 
 
