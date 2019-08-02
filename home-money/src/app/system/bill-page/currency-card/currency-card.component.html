@@ -17,17 +17,17 @@
                         <tr>
                             <td>EURO</td>
                             <td>1</td>
-                            <td>{{ currency.date }}</td>
+                            <td>{{ currency.date | appMoment: 'YYYY-MM-DD' }}</td>
                         </tr>
                         <tr *ngFor="let c of currencies">
                             <td>{{c}}</td>
                             <td>{{ currency.rates[c] | number: "1.3-3"}}</td>
-                            <td>{{ currency.date }}</td>
+                            <td>{{ currency.date | appMoment: 'YYYY-MM-DD' }}</td>
                         </tr>
                         <tr>
                                 <td>USD => BYN</td>
                                 <td>{{ ((currency.rates['BYN'] | number : '1.2-2')/(currency.rates['USD']| number : '1.1-1')) |  number : '1.3-3' }}</td>
-                                <td>{{ currency.date }}</td>
+                                <td>{{ currency.date | appMoment: 'YYYY-MM-DD' }}</td>
                             </tr>
                         </tbody>
                     </table>
