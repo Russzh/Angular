@@ -9,4 +9,12 @@ export class CategoriesService{
     addCategory(category: Category) {
         return this.http.post('http://localhost:3000/categories', category);
     }
+
+    getCategories() {
+        return this.http.get('http://localhost:3000/categories');
+    }
+
+    updateCategory(category:Category) {
+        return this.http.put(`http://localhost:3000/categories/${category.id}`, category);
+    }
 }
